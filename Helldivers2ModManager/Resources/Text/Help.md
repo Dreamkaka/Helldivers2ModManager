@@ -1,50 +1,52 @@
-﻿Need help? You've come to the right place. This document will discuss
-the usage of the manager and common issues you might encounter.
-As well as instructions for developers.
+﻿>汉化作者：幻梦晓寒kaka,汉化版本v1.2.0.1 (2024-12-31)
 
-Read a nicer formatted version [here](https://github.com/teutinsa/Helldivers2ModManager/blob/master/Helldivers2ModManager/Resources/Text/Help.md).
+需要帮助？您来对地方了。本文档将讨论
+mod管理器的使用方法和可能遇到的常见问题。
+以及开发人员指南。
 
-# For users
+阅读原文（GitHub） [here](https://github.com/teutinsa/Helldivers2ModManager/blob/master/Helldivers2ModManager/Resources/Text/Help.md).
 
-## Setting up
-This section will guide you though setting up the manager for the first time.
+# 对于用户
 
-Setting the manager up for the first time is easy. All you need to know is your
-Helldivers 2 installation location. 
+## 设置
+本节将指导您第一次设置mod管理器。
+
+首次设置mod管理器非常简单。你只需要知道你的helldiver2的游戏目录安装位置就行了
 
 
-## Adding mods
-This section will discuss how to add mods and how use their options.
+## 添加mod
+本节将讨论如何添加mod以及如何使用它们的选项。 
 
-To add a mod all you need to do is hit the "Add" button and select a zip archive
+要添加mod，只需点击“添加”按钮并选择一个zip压缩包
 you've downloaded from the [Nexus](https://www.nexusmods.com/helldivers2).
-From there it will be added to your list. Some mods provide options for customization,
-either by providing a simple drop down to select a variant or by exposing and "Edit"
-button to select more detailed options.
+然后它就会被添加到您的列表中。有些 MOD 提供了自定义选项、
+通过简单的下拉选择变体，或通过 “编辑 ”按钮选择更详细的选项。
+按钮来选择更详细的选项。
 
-When clicking the "Edit" button you'll be faced with a list of components you can
-individually toggle and if provided pick a variant for.
+点击 “编辑 ”按钮后，您将看到一个组件列表，您可以
+可单独切换的组件列表。
 
-Once you're satisfied with your mods hit the "Deploy" button and wait for it to finish.
-Do **NOT** verify your game files after the deployment is complete.
-Now you can launch the game through Steam or hitting the "Run" button.
+一旦对您的修改感到满意，请点击 “安装mod”按钮并等待完成。
+安装完成后，请勿验证游戏完整性！！！
+现在你可以通过 Steam 或点击 “启动游戏 ”按钮启动游戏了。
 
 
-## Common problems
-This section will discuss some of the more common issues you might encounter.
+## FAQ
+接下来将讨论你可能在安装mod遇到的一些常见问题
 
-### My mod doesn't show in game.
-Are you sure? Some armor and weapon mods only not appear in the menu but once
-you've equipped them they will show up just fine.
+### 我的mod没有在游戏中显示啊？？？
+有些装甲和武器 MOD 会不出现在菜单中
 
-### My game does not start now.
-This can happen. Mods and the game itself are constantly changing so one might break
-the other. When you encounter something like this it's recommended to go though your
-mod list and disable them one by one to see what mod is causing the issue.
-Should your game still not start click the "Purge" button and verify your game files
-to get back to a state were your game runs without mods.
+但一旦你装备了它们，它们就会显示出来。
 
-# For developers
+
+### 我的游戏无法启动了
+这种情况随时都有可能发生，mod管理器和游戏本身都在不断变化，因此这两可能会产生冲突
+遇到这种情况时，建议查看你的mod 列表，逐个禁用它们，看看是哪个 mod 导致了问题。
+如果游戏仍然无法启动，请单击 “删除mod”按钮并验证游戏完整性
+使游戏恢复到没有mod运行的状态。
+
+# 对于mod制作者（暂未汉化）
 This section is intended for the wonderful people that make mods.
 Here we will discuss how to make your mod work with the manager
 and how you can improve the users experience.

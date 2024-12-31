@@ -14,7 +14,7 @@ namespace Helldivers2ModManager.ViewModels;
 
 internal sealed partial class SettingsPageViewModel : PageViewModelBase
 {
-	public override string Title => "Settings";
+	public override string Title => "设置";
 
 	public string GameDir
 	{
@@ -50,7 +50,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 			_storageDirChanged = true;
 			WeakReferenceMessenger.Default.Send(new MessageBoxInfoMessage()
 			{
-				Message = "Storage directory changed. The application needs to be restarted and will quit once you hit \"OK\"."
+				Message = "配置目录已更改。管理器需要重新启动，一旦你点击\"ok\"，它将退出。"
 			});
 		}
 	}
@@ -112,7 +112,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
-				Message = "Game directory can not be left empty!"
+				Message = "游戏目录不能为空！！！"
 			});
 			return false;
 		}
@@ -121,7 +121,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
-				Message = "Storage directory can not be left empty!"
+				Message = "配置目录不能为空！！！"
 			});
 			return false;
 		}
@@ -130,7 +130,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
-				Message = "Temporary directory can not be left empty!"
+				Message = "临时目录不能为空！！！"
 			});
 			return false;
 		}
@@ -170,8 +170,8 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 	{
 		WeakReferenceMessenger.Default.Send(new MessageBoxConfirmMessage
 		{
-			Title = "Reset?",
-			Message = "Do you really want to reset your settings?",
+			Title = "重置？",
+			Message = "你确定要重置你的设置吗？",
 			Confirm = () =>
 			{
 				_settingsStore.Reset();
@@ -190,7 +190,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		var dialog = new OpenFolderDialog
 		{
 			Multiselect = false,
-			Title = "Please select you Helldivers 2 folder..."
+			Title = "请选择你的hd2游戏文件夹..."
 		};
 
 		if (dialog.ShowDialog() ?? false)
@@ -206,7 +206,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 			{
 				WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 				{
-					Message = "The selected Helldivers 2 folder does not reside in a valid directory!"
+					Message = "你选择的文件夹不在一个有效的文件目录中！！！"
 				});
 				return;
 			}
@@ -216,7 +216,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 			{
 				WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 				{
-					Message = "The selected Helldivers 2 root path does not contain a directory named \"data\"!"
+					Message = "你选择的文件夹中不包含一个名为\"data\"的文件夹！！！"
 				});
 				return;
 			}
@@ -224,7 +224,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 			{
 				WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 				{
-					Message = "The selected Helldivers 2 root path does not contain a directory named \"tools\"!"
+					Message = "你选择的文件夹中不包含一个名为\"tools\"的文件夹！！！"
 				});
 				return;
 			}
@@ -232,7 +232,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 			{
 				WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 				{
-					Message = "The selected Helldivers 2 root path does not contain a directory named \"bin\"!"
+					Message = "你选择的文件夹中不包含一个名为\"bin\"的文件夹！！！"
 				});
 				return;
 			}
@@ -243,7 +243,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
-				Message = "The selected path is not a valid Helldivers 2 root!"
+				Message = "你选择的文件夹不是hd2的游戏文件夹！！！"
 			});
 		}
 	}
@@ -255,7 +255,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			Multiselect = false,
 			ValidateNames = true,
-			Title = "Please select a folder where you want this manager to store its mods..."
+			Title = "请选择一个文件夹，这个文件夹将用于存储mod..."
 		};
 
 		if (dialog.ShowDialog() ?? false)
@@ -269,7 +269,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 		{
 			Multiselect = false,
 			ValidateNames = true,
-			Title = "Please select a folder which you want this manager to use for temporary files..."
+			Title = "请选择一个文件夹，这个文件夹将用于存储临时文件..."
 		};
 
 		if (dialog.ShowDialog() ?? false)
@@ -304,8 +304,8 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 	{
 		WeakReferenceMessenger.Default.Send(new MessageBoxInputMessage
 		{
-			Title = "File name?",
-			Message = "Please enter the 16 character name of an archive file you want to skip patch 0 for.",
+			Title = "文件名？",
+			Message = "请输入一个16字符的文件名，这个文件名将用于跳过patch 0。",
 			MaxLength = 16,
 			Confirm = (str) =>
 			{
@@ -314,7 +314,7 @@ internal sealed partial class SettingsPageViewModel : PageViewModelBase
 				else
 					WeakReferenceMessenger.Default.Send(new MessageBoxInfoMessage
 					{
-						Message = "Archive file names can only be 16 characters long."
+						Message = "文件名只能为16个字符！！！"
 					});
 			}
 		});

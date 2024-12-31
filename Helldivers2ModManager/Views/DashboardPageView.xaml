@@ -26,7 +26,7 @@
 		<StackPanel Grid.Row="0"
 					Grid.RowSpan="2"
 					Grid.Column="0">
-			<Button Content="Add"
+			<Button Content="添加"
 					Command="{Binding AddCommand}"/>
 			<!--
 			<Button Content="Browse"
@@ -38,7 +38,7 @@
 			<Button Content="Import"
 					Command="{Binding ImportCommand}"/>
 			-->
-			<Button Content="Report Bug"
+			<Button Content="反馈bug"
 					Command="{Binding ReportBugCommand}"/>
 			<Grid>
 				<Grid.ColumnDefinitions>
@@ -52,7 +52,7 @@
 				</Button>
 				<Button Grid.Column="1"
 						Command="{Binding DiscordCommand}"
-						ToolTip="Need help? Join the community!">
+						ToolTip="需要帮助？加入我们的群组！！！">
 					<Image Source="..\Resources\Images\discord_icon.png"
 						   Height="30"/>
 				</Button>
@@ -60,19 +60,19 @@
 		</StackPanel>
 		<Button Grid.Row="2"
 				Grid.Column="0"
-				Content="Settings"
+				Content="设置"
 				Command="{Binding SettingsCommand}"/>
 		<StackPanel Grid.Row="2"
 					Grid.Column="1"
 					Orientation="Horizontal"
 					HorizontalAlignment="Right">
-			<Button Content="Run"
+			<Button Content="启动游戏"
 					Command="{Binding RunCommand}"
 					ToolTip="Runs the game through steam."/>
-			<Button Content="Purge"
+			<Button Content="清除mod"
 					Style="{DynamicResource CancelButton}"
 					Command="{Binding PurgeCommand}"/>
-			<Button Content="Deploy"
+			<Button Content="安装mod"
 					Style="{DynamicResource ConfirmButton}"
 					Command="{Binding DeployCommand}"/>
 		</StackPanel>
@@ -84,7 +84,7 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<TextBlock Grid.Column="0"
-					   Text="Search:"
+					   Text="搜索:"
 					   Foreground="White"
 					   FontSize="24"
 					   VerticalAlignment="Center"

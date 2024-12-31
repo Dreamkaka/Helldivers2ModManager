@@ -17,9 +17,9 @@
 				   FontSize="16"
 				   TextWrapping="Wrap"
 				   Margin="0 0 0 5">
-			Lets start with a simple question:
+			先问个问题
 			<LineBreak/>
-			Will your mod have options to choose from?
+			你的mod会有可供选择的选项吗
 		</TextBlock>
 		<RadioButton GroupName="HasOptions"
 					 Foreground="White"
@@ -31,7 +31,7 @@
 		<RadioButton GroupName="HasOptions"
 					 Foreground="White"
 					 FontSize="16"
-					 Content="No"
+					 Content="NO"
 					 IsChecked="{Binding HasNoOptions}"
 					 VerticalContentAlignment="Center"/>
 	</StackPanel>
