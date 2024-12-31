@@ -144,7 +144,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 			var mod = _modStore.GetModByGuid(item.Guid);
 			if (mod is null)
 			{
-				_logger.LogWarning("Mod {} not found, skipping", item.Guid);
+				_logger.LogWarning("Mod {} 没找到, 跳过", item.Guid);
 				continue;
 			}
 			switch (mod.Manifest.Version)
@@ -190,8 +190,8 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 	{
 		WeakReferenceMessenger.Default.Send(new MessageBoxProgressMessage()
 		{
-			Title = "Saving mod configuration",
-			Message = "Please wait democratically."
+			Title = "保存mod配置",
+			Message = "等一下喵"
 		});
 
 		var enabledFile = new FileInfo(Path.Combine(_settingsStore.StorageDirectory, "enabled.json"));
@@ -253,8 +253,8 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxProgressMessage()
 			{
-				Title = "Adding Mod",
-				Message = "Please wait democratically."
+				Title = "添加mod",
+				Message = "等一下喵"
 			});
 			try
 			{
@@ -305,7 +305,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 		WeakReferenceMessenger.Default.Send(new MessageBoxProgressMessage()
 		{
 			Title = "Purging Mods",
-			Message = "Please wait democratically."
+			Message = "等一下喵."
 		});
 
 		await _modStore.PurgeAsync();
@@ -320,7 +320,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 		{
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
-				Message = "Unable to deploy! Helldivers 2 Path not set. Please go to settings."
+				Message = "安装失败，未设置游戏目录！！！"
 			});
 			return;
 		}
@@ -328,7 +328,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 		WeakReferenceMessenger.Default.Send(new MessageBoxProgressMessage()
 		{
 			Title = "Deploying Mods",
-			Message = "Please wait democratically."
+			Message = "安装中..."
 		});
 
 		var mods = _mods.Where(static vm => vm.Enabled).ToArray();
@@ -342,12 +342,12 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 
 			WeakReferenceMessenger.Default.Send(new MessageBoxInfoMessage()
 			{
-				Message = "Deployment successful."
+				Message = "安装成功！"
 			});
 		}
 		catch(Exception ex)
 		{
-			_logger.LogWarning(ex, "Deployment failed");
+			_logger.LogWarning(ex, "安装失败");
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
 				Message = ex.Message
