@@ -354,7 +354,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 			{
 				WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 				{
-					Message = $"Something is wrong with this mod: \"{mod.Manifest.Name}\"\n\n{ex.Message}\n\t{ex.InnerException?.Message}"
+					Message = $"此mod有问题: \"{mod.Manifest.Name}\"\n\n{ex.Message}\n\t{ex.InnerException?.Message}"
 				});
 			}
 			else if (ex.FileTriplet.HasValue)
@@ -375,7 +375,7 @@ internal sealed partial class DashboardPageViewModel : PageViewModelBase
 		}
 		catch(Exception ex)
 		{
-			_logger.LogError(ex, "Unknown deployment error");
+			_logger.LogError(ex, "未知错误");
 			WeakReferenceMessenger.Default.Send(new MessageBoxErrorMessage()
 			{
 				Message = ex.Message

@@ -26,7 +26,7 @@
 		<StackPanel Grid.Row="0"
 					Grid.RowSpan="2"
 					Grid.Column="0">
-			<Button Content="添加"
+			<Button Content="添加mod"
 					Command="{Binding AddCommand}"/>
 			<!--
 			<Button Content="Browse"
@@ -38,7 +38,7 @@
 			<Button Content="Import"
 					Command="{Binding ImportCommand}"/>
 			-->
-			<Button Content="反馈bug"
+			<Button Content="报告bug"
 					Command="{Binding ReportBugCommand}"/>
 			<Grid>
 				<Grid.ColumnDefinitions>
@@ -52,7 +52,7 @@
 				</Button>
 				<Button Grid.Column="1"
 						Command="{Binding DiscordCommand}"
-						ToolTip="需要帮助？加入我们的群组！！！">
+						ToolTip="需要帮助？加入我们的discord！">
 					<Image Source="..\Resources\Images\discord_icon.png"
 						   Height="30"/>
 				</Button>
@@ -66,38 +66,28 @@
 					Grid.Column="1"
 					Orientation="Horizontal"
 					HorizontalAlignment="Right">
-<<<<<<< HEAD
-			<Button Content="启动游戏"
-					Command="{Binding RunCommand}"
-					ToolTip="Runs the game through steam."/>
-			<Button Content="清除mod"
-					Style="{DynamicResource CancelButton}"
-					Command="{Binding PurgeCommand}"/>
-			<Button Content="安装mod"
-=======
-			<Button Content="Purge"
+			<Button Content="删除mod"
 					Style="{DynamicResource CancelButton}"
 					Command="{Binding PurgeCommand}">
 				<Button.ToolTip>
-					<TextBlock Text="Removes all patch files from the games data directory."
+					<TextBlock Text="删除所有mod"
 							   FontFamily="../Resources/Fonts/#FS Sinclair Regular"
 							   Margin="5 0"/>
 				</Button.ToolTip>
 			</Button>
-			<Button Content="Deploy"
->>>>>>> f6bcea307c9502e1603d8efd9962a8b9b2ca2502
+			<Button Content="安装mod"
 					Style="{DynamicResource ConfirmButton}"
 					Command="{Binding DeployCommand}">
 				<Button.ToolTip>
-					<TextBlock Text="Installs all selected mods patch files into the games data directory."
+					<TextBlock Text="安装所有选择的mod"
 							   FontFamily="../Resources/Fonts/#FS Sinclair Regular"
 							   Margin="5 0"/>
 				</Button.ToolTip>
 			</Button>
-			<Button Content="Launch HD2"
+			<Button Content="启动游戏"
 					Command="{Binding RunCommand}">
 				<Button.ToolTip>
-					<TextBlock Text="Runs the game through steam."
+					<TextBlock Text="直接启动游戏（需要打开steam）."
 							   FontFamily="../Resources/Fonts/#FS Sinclair Regular"
 							   Margin="5 0"/>
 				</Button.ToolTip>
@@ -111,7 +101,7 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<TextBlock Grid.Column="0"
-					   Text="搜索:"
+					   Text="Search:"
 					   Foreground="White"
 					   FontSize="24"
 					   VerticalAlignment="Center"
