@@ -13,7 +13,7 @@ namespace Helldivers2ModManager;
 
 internal partial class App : Application
 {
-	public static readonly Version Version = new(1, 2, 0, 1);
+	public static readonly Version Version = new(1, 2, 1, 0);
 
 	public static readonly string? VersionAddition = null;
 
@@ -27,7 +27,7 @@ internal partial class App : Application
 	{
 #if !DEBUG
 		AppDomain.CurrentDomain.UnhandledException += (_, e) => LogUnhandledException(e.ExceptionObject as Exception);
-		Current.DispatcherUnhandledException += (_, e) => LogUnhandledException(e.Exception);
+		DispatcherUnhandledException += (_, e) => LogUnhandledException(e.Exception);
 		TaskScheduler.UnobservedTaskException += (_, e) => LogUnhandledException(e.Exception);
 #endif
 
@@ -42,6 +42,7 @@ internal partial class App : Application
 			log.SetMinimumLevel(LogLevel.Trace);
 			log.AddDebug();
 #endif
+			log.AddConsole();
 			log.AddFile("ModManager");
 		});
 		builder.Services.AddTransient<MainWindow>();

@@ -1,4 +1,5 @@
-﻿using Helldivers2ModManager.Models;
+﻿using Helldivers2ModManager.Extensions;
+using Helldivers2ModManager.Models;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Runtime.Serialization;
@@ -44,6 +45,12 @@ internal sealed class ModManifestLegacyService(ILogger<ModManifestLegacyService>
 		var iconPath = root.OptionalStringProp("IconPath");
 		var options = root.OptionalStringArrayProp("Options");
 
+		if (iconPath is not null && Path.IsPathRooted(iconPath))
+		{
+			_logger.LogWarning("Icon path \"{}\" for \"{}\" is not relative, replacing with null", iconPath, name);
+			iconPath = null;
+		}
+
 		return new ModManifestLegacy
 		{
 			Guid = guid,
@@ -67,9 +74,9 @@ internal sealed class ModManifestLegacyService(ILogger<ModManifestLegacyService>
 
 		var files = directory.GetFiles().Where(static f => IModManifestService.ImageExtensions.Contains(f.Extension));
 		if (files.FirstOrDefault(static f => f.Name.Contains("icon")) is FileInfo icon)
-			iconPath = icon.FullName;
+			iconPath = Path.GetRelativePath(directory.FullName, icon.FullName);
 		else if (files.FirstOrDefault() is FileInfo file)
-			iconPath = file.FullName;
+			iconPath = Path.GetRelativePath(directory.FullName, file.FullName);
 
 		var directories = directory.GetDirectories();
 		if (directories.Length > 0)
